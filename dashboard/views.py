@@ -1,3 +1,4 @@
+# coding: utf-8
 from django.shortcuts import render, redirect
 from django.views.generic import View
 from .forms import ClientForm
@@ -25,11 +26,20 @@ def results(request, client_id):
     ###################################
     # ----> YOUR CODE GOES HERE <---- #
     ###################################
+
+#On commence par se connecter à la base de donnée
     con = sqlite3.connect('db.sqlite3')
+#On va affecter les conso en euro et en watt aux variables conso_watt et conso_eur
     cursor = con.cursor()
     cursor.execute("SELECT * FROM dashboard_conso_eur WHERE client_id = ?",(client_id,))
-    rows = cursor.fetchall()
-    print(rows)
+    conso_euro = cursor.fetchall()
+    print(conso_euro)
+    cursor.execute("SELECT * FROM dashboard_conso_watt WHERE client_id = ?",(client_id,))
+    conso_watt = cursor.fetchall()
+    conso_euro_2016 = conso_euro[0]
+    conso_euro_2017 = conso_euro[1]
+
+
 
 
 
