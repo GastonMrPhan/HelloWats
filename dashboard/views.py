@@ -26,7 +26,7 @@ def results(request, client_id):
     # ----> YOUR CODE GOES HERE <---- #
     ###################################
     con = sqlite3.connect('db.sqlite3')
-    cursor = con.cursur()
+    cursor = con.cursor()
     cursor.execute("SELECT * FROM dashboard_conso_eur WHERE client_id=%s;",(client_id,))
     rows = cursor.fetchall()
     print(rows)
