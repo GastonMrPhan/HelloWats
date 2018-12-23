@@ -1,4 +1,10 @@
-{% extends 'dashboard/results_base.html' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HelloWatts</title>
+    </head>
+    <body>
+    {% extends 'dashboard/results_base.html' %}
 
 {% load static %}
 
@@ -10,13 +16,20 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">Mon tableau de bord énergie</h1>
+        <h1>Test</h1>
     </div>
 </div>
 
- -----> YOUR CODE HERE <-----
+ -----> YOUR CODE HERE zera  <-----
+    <h1>Test</h1>
+    <h1>Voici votre consommation annuelle</h1>
+        <li>{{ conso_euro }}</li>
+
 
 {% endblock %}
 
 {% block script %}
     <script src="{% static 'dashboard/js/results.js' %}"></script>
 {% endblock %}
+    </body>
+</html>
