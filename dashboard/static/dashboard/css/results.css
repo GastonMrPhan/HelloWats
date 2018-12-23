@@ -1,11 +1,5 @@
 /* ----> YOUR CODE HERE zear <---- */
-
-.row {
-  font-color: green;
-  font-size: 35px;
-}
-
-.col-lg-12{
-    background-color: #88BB11;
-    font-weight: bold;
+p{
+  color: blue;
+  font-size: 14px;
 }
