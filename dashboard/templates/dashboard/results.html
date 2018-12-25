@@ -16,19 +16,131 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">Mon tableau de bord énergie</h1>
-        <h1>Test</h1>
     </div>
+
 </div>
 
- -----> YOUR CODE HERE zera  <-----
-    <h1>Test</h1>
-    <h1>Voici votre consommation annuelle</h1>
-        <li>{{ conso_euro }}</li>
-    <h1>Test aiut</h1>
+ -----> YOUR CODE HERE  <-----
+<div class="Depenses">
+    <h1 class="page-header">
+        Dépenses annuelles
+    </h1>
+    <table>
+        <tr class="ligne1">
+            <td>Année</td>
+            <td> Coût (en euros)</td>
+        </tr>
+        <tr class="ligne2">
+            <td>2017</td>
+            <td>{{Depense_2017}}</td>
+        </tr>
+        <tr class="ligne2">
+            <td>2016</td>
+            <td>{{Depense_2016}}</td>
+        </tr>
+    </table>
 
-<div class="Test">
-    <h1>Test div</h1>
+    <div id="Detail2017">
+        <table>
+            <tr class="mois">
+                <td>Mois</td>
+                <td>Juillet</td>
+                <td>Aout</td>
+                <td>Septembre</td>
+                <td>Octobre</td>
+                <td>Novembre</td>
+                <td>Décembre</td>
+                <td>Janvier</td>
+                <td>Février</td>
+                <td>Mars</td>
+                <td>Avril</td>
+                <td>Mai</td>
+                <td>Juin</td>
+            </tr>
+            <tr class="depenses">
+                <td>Cout (en euros)</td>
+                <td>{{ conso_euro_2017_juillet }}</td>
+                <td>{{ conso_euro_2017_aout }}</td>
+                <td>{{ conso_euro_2017_septembre }}</td>
+                <td>{{ conso_euro_2017_octobre }}</td>
+                <td>{{ conso_euro_2017_novembre }}</td>
+                <td>{{ conso_euro_2017_decembre }}</td>
+                <td>{{ conso_euro_2017_janvier }}</td>
+                <td>{{ conso_euro_2017_fevrier }}</td>
+                <td>{{ conso_euro_2017_mars }}</td>
+                <td>{{ conso_euro_2017_avril }}</td>
+                <td>{{ conso_euro_2017_mai }}</td>
+                <td>{{ conso_euro_2017_juin }}</td>
+
+            </tr>
+
+        </table>
+
+
+    </div>
+
+    <div id="Detail2016">
+        <table>
+            <tr class="mois">
+                <td>Mois</td>
+                <td>Juillet</td>
+                <td>Aout</td>
+                <td>Septembre</td>
+                <td>Octobre</td>
+                <td>Novembre</td>
+                <td>Décembre</td>
+                <td>Janvier</td>
+                <td>Février</td>
+                <td>Mars</td>
+                <td>Avril</td>
+                <td>Mai</td>
+                <td>Juin</td>
+            </tr>
+            <tr class="depenses">
+                <td>Cout (en euros)</td>
+                <td>{{ conso_euro_2016_juillet }}</td>
+                <td>{{ conso_euro_2016_aout }}</td>
+                <td>{{ conso_euro_2016_septembre }}</td>
+                <td>{{ conso_euro_2016_octobre }}</td>
+                <td>{{ conso_euro_2016_novembre }}</td>
+                <td>{{ conso_euro_2016_decembre }}</td>
+                <td>{{ conso_euro_2016_janvier }}</td>
+                <td>{{ conso_euro_2016_fevrier }}</td>
+                <td>{{ conso_euro_2016_mars }}</td>
+                <td>{{ conso_euro_2016_avril }}</td>
+                <td>{{ conso_euro_2016_mai }}</td>
+                <td>{{ conso_euro_2016_juin }}</td>
+
+            </tr>
+
+        </table>
+
+
+    </div>
+
+
+
 </div>
+<div class="Consommation">
+    <h1 class="Title">Titre test</h1>
+    <p id="graphe">
+        
+    </p>
+    <p>
+        {{ conso_euro }}
+    </p>
+
+</div>
+<div id="chauffage">
+    <h1>Utilisation d'un chauffage électrique</h1>
+</div>
+<div class="Dysfonctionnement">
+
+</div>
+
+<div id="myfirstchart" style="height: 250px;">
+</div>
+
 
 
 {% endblock %}

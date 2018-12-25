@@ -1,5 +1,37 @@
 /* ----> YOUR CODE HERE zear <---- */
-p{
-  color: blue;
-  font-size: 14px;
+
+
+.Test{
+    color: blue;
+    font-size: 8px;
+    background-color: #88BB11;
+    width: 800px;
+    border: 5px solid black;
+    position: relative;
+    left: 50px;
+}
+
+#graphe{
+    height:40px;
+
+}
+
+.Title {
+    position: static;
+}
+
+td{
+    border: 1px solid black;
+    padding: 10px 15px;
+}
+table{
+    border-collapse:collapse;
+}
+
+.ligne1{
+    background-color: #BBB;
+}
+
+.ligne2 {
+    background-color: #EEE;
 }
