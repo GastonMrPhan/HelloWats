@@ -1,24 +1,10 @@
 /* ----> YOUR CODE HERE zear <---- */
 
-
-.Test{
-    color: blue;
-    font-size: 8px;
-    background-color: #88BB11;
-    width: 800px;
-    border: 5px solid black;
-    position: relative;
-    left: 50px;
+body{
+    font-family:Verdana;
 }
 
-#graphe{
-    height:40px;
-
-}
-
-.Title {
-    position: static;
-}
+/* On va mettre en forme notre tableau de dépenses*/
 
 td{
     border: 1px solid black;
@@ -34,4 +20,71 @@ table{
 
 .ligne2 {
     background-color: #EEE;
+}
+
+CAPTION{
+    font-size:25px;
+    color:black;
+    font-weight:bold;
+    font-family: Nunito;
+}
+
+/*Consommation 2017*/
+.Titre{
+    background-color:green;
+    background: rgba(204, 204, 204, 0.5);
+    border:1 solid black;
+    font-family:Nunito;
+    font-weight:bold;
+}
+
+/* Chauffage électrique */
+.Chauffage{
+    position:relative;
+    left:390px;
+    top:68px;
+}
+
+#Faux{
+    display:block;
+    position:relative;
+    left:225px;
+    bottom: 22px;
+    font-size:16px;
+    background-color:#696969;
+    width:44px;
+}
+
+#Vrai{
+    display:block;
+    position:relative;
+    left:225px;
+    bottom: 22px;
+    font-size:16px;
+    background-color:#3CB371;
+    width:44px;
+}
+
+.TitreChauffage{
+    font-size:24px;
+    font-family:Nunito;
+    font-weight:bold;
+}
+
+
+/* Dysfonctionnement*/
+
+.Dysfonctionnement{
+    position:relative;
+    width:280px;
+    left:760px;
+    bottom:200px;
+}
+
+
+
+#MessageAlerte{
+    display:block;
+    background-color:#b9133a;
+    color:black;
 }

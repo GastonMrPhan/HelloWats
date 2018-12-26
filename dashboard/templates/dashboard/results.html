@@ -19,13 +19,23 @@
     </div>
 
 </div>
+<div class="Depenses,Chauffage,Alertes">
 
- -----> YOUR CODE HERE  <-----
-<div class="Depenses">
-    <h1 class="page-header">
-        Dépenses annuelles
+    <div class="Chauffage">
+    <!--Déclarons la variable -->
+    <input type="hidden" id="is_elec_heating" value="{{ is_elec_heating }}">
+    <!--Nous allons créer 2 blocs correspondant à la valeur de la variable. On affichera le bloc correspondant
+    à l'aide des fonctions dans javascripts.-->
+    <h1 class="TitreChauffage">Chauffage électrique:
+        <span class="badge badge-secondary" id="Vrai">Oui</span>
+        <span class="badge badge-secondary" id="Faux">Non</span>
     </h1>
-    <table>
+    </div>
+        <!--On va commencer par afficher les parties dépenses-->
+<!-- Il y aura un tableau avec les dépenses correspondant à l'année-->
+    <div class="TableDepenses">
+    <table id="Table2017">
+        <CAPTION>Dépenses annuelles</CAPTION>
         <tr class="ligne1">
             <td>Année</td>
             <td> Coût (en euros)</td>
@@ -33,16 +43,13 @@
         <tr class="ligne2">
             <td>2017</td>
             <td>{{Depense_2017}}</td>
+            <td id="bouton1">
+                <button type="button" id="Bouton2017" class="btn btn-info 2017">Détail</button>
+            </td>
         </tr>
-        <tr class="ligne2">
-            <td>2016</td>
-            <td>{{Depense_2016}}</td>
-        </tr>
-    </table>
-
-    <div id="Detail2017">
-        <table>
-            <tr class="mois">
+        <!-- L'utilisateur pourra afficher les détails de sa consommation en cliquant sur le bouton détail-->
+        <div id="Detail2017">
+            <tr class="mois2017">
                 <td>Mois</td>
                 <td>Juillet</td>
                 <td>Aout</td>
@@ -57,7 +64,7 @@
                 <td>Mai</td>
                 <td>Juin</td>
             </tr>
-            <tr class="depenses">
+            <tr class="depenses2017">
                 <td>Cout (en euros)</td>
                 <td>{{ conso_euro_2017_juillet }}</td>
                 <td>{{ conso_euro_2017_aout }}</td>
@@ -71,17 +78,20 @@
                 <td>{{ conso_euro_2017_avril }}</td>
                 <td>{{ conso_euro_2017_mai }}</td>
                 <td>{{ conso_euro_2017_juin }}</td>
-
             </tr>
+        </div>
 
-        </table>
 
+        <tr class="ligne2">
+            <td>2016</td>
+            <td>{{Depense_2016}}</td>
+            <td>
+                <button type="button" id="Bouton2016" class="btn btn-info 2016">Détail</button>
 
-    </div>
-
-    <div id="Detail2016">
-        <table>
-            <tr class="mois">
+            </td>
+        </tr>
+            <div id="Detail2016">
+            <tr class="mois2016">
                 <td>Mois</td>
                 <td>Juillet</td>
                 <td>Aout</td>
@@ -96,7 +106,7 @@
                 <td>Mai</td>
                 <td>Juin</td>
             </tr>
-            <tr class="depenses">
+            <tr class="depenses2016">
                 <td>Cout (en euros)</td>
                 <td>{{ conso_euro_2016_juillet }}</td>
                 <td>{{ conso_euro_2016_aout }}</td>
@@ -110,36 +120,47 @@
                 <td>{{ conso_euro_2016_avril }}</td>
                 <td>{{ conso_euro_2016_mai }}</td>
                 <td>{{ conso_euro_2016_juin }}</td>
-
             </tr>
+            </div>
+    </table>
+    </div>
+    <!--Nous allons créer une alerte pour le dysfonctionnement qui s'affichera uniquement si un dysfonctionnement a été détecté.-->
 
-        </table>
+    <div class="Dysfonctionnement">
+            <input type="hidden" id="dysfunction_detected" value="{{ dysfunction_detected }}">
 
-
+        <div id="MessageAlerte" class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Dysfonctionnement</h4>
+            <hr>
+  <p>Un dysfonctionnement a été détecté. Votre consommation a variée de {{pourcentage}}% entre l'année 2016 et 2017.</p>
+        </div>
     </div>
 
 
-
-</div>
-<div class="Consommation">
-    <h1 class="Title">Titre test</h1>
-    <p id="graphe">
-        
-    </p>
-    <p>
-        {{ conso_euro }}
-    </p>
-
-</div>
-<div id="chauffage">
-    <h1>Utilisation d'un chauffage électrique</h1>
-</div>
-<div class="Dysfonctionnement">
-
 </div>
 
-<div id="myfirstchart" style="height: 250px;">
-</div>
+    <!--On va s'occuper de la courbe de consommation 2017-->
+    <div class="Consommation2017">
+        <h1 class="Titre">Consommation en 2017</h1>
+
+        <div id="bar-chart" >
+        </div>
+<!--Définissons les variables pour qu'elles puissent être utilisé dans le fichier javascript -->
+    <input type="hidden" id="conso_watt_2017_juillet" value="{{ conso_watt_2017_juillet }}">
+    <input type="hidden" id="conso_watt_2017_aout" value="{{ conso_watt_2017_aout }}">
+    <input type="hidden" id="conso_watt_2017_septembre" value="{{ conso_watt_2017_septembre }}">
+    <input type="hidden" id="conso_watt_2017_octobre" value="{{ conso_watt_2017_octobre }}">
+    <input type="hidden" id="conso_watt_2017_novembre" value="{{ conso_watt_2017_novembre }}">
+    <input type="hidden" id="conso_watt_2017_decembre" value="{{ conso_watt_2017_decembre }}">
+    <input type="hidden" id="conso_watt_2017_janvier" value="{{ conso_watt_2017_janvier }}">
+    <input type="hidden" id="conso_watt_2017_fevrier" value="{{ conso_watt_2017_fevrier }}">
+    <input type="hidden" id="conso_watt_2017_mars" value="{{ conso_watt_2017_mars }}">
+    <input type="hidden" id="conso_watt_2017_avril" value="{{ conso_watt_2017_avril }}">
+    <input type="hidden" id="conso_watt_2017_mai" value="{{ conso_watt_2017_mai }}">
+    <input type="hidden" id="conso_watt_2017_juin" value="{{ conso_watt_2017_juin }}">
+
+
+    </div>
 
 
 
